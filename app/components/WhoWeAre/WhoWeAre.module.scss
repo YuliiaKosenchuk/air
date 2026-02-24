@@ -1,0 +1,28 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  background-color: $bg-color-primary;
+}
+
+.content {
+  max-width: 754px;
+  padding: 150px 0 180px 0;
+}
+
+.title {
+  @include title-base;
+
+  margin-bottom: 16px;
+}
+
+.text {
+  @include text-base(24px, 500);
+
+  margin-bottom: 24px;
+}

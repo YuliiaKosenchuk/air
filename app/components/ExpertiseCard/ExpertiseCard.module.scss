@@ -1,0 +1,31 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 264px;
+}
+
+.image {
+  display: block;
+  margin-bottom: 40px;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+}
+
+.title {
+  @include title-base(20px);
+
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.description {
+  @include text-base(14px);
+}

@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.section {
+  position: relative;
+  z-index: 2;
+  margin-top: -30px; 
+  padding: 80px 20px;
+  border-radius: 30px; 
+  background-color:$bg-color-secondary;
+}
+
+.title {
+  @include title-base(52px);
+
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-between;
+}
