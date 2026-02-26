@@ -47,6 +47,12 @@ export default function NavLinks({ type, hoveredItem, setHoveredItem }) {
             variants={CARD_ITEM}
             className={styles.navLi}
             onMouseEnter={() => handleInteraction(link.id, index)}
+            onClick={() => {
+              handleInteraction(link.id);
+              if (onClick) {
+                setTimeout(onClick, 400);
+              }
+            }}
           >
             <Link href={link.href} className={styles.navItem}>
               {link.name}

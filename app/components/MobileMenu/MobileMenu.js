@@ -53,11 +53,14 @@ export default function MobileMenu() {
   // Prevent background scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
+      document.documentElement.style.overflow = "hidden"; // For iOS Safari
       document.body.style.overflow = "hidden";
     } else {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "unset";
     }
     return () => {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
