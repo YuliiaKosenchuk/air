@@ -47,6 +47,9 @@
   padding: 140px 50px;
   background: $bg-color-dark;
 
+  touch-action: none; 
+  overscroll-behavior: none;
+
   nav {
     ul {
       flex-direction: column;

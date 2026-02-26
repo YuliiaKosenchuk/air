@@ -51,19 +51,33 @@ export default function MobileMenu() {
   const mode = isOpen ? "open" : "closed";
 
   // Prevent background scrolling when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.documentElement.style.overflow = "hidden"; // For iOS Safari
-      document.body.style.overflow = "hidden";
-    } else {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "unset";
+ useEffect(() => {
+  if (isOpen) {
+    const scrollY = window.scrollY;
+    
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflowY = 'hidden';
+  } else {
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflowY = '';
+
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
-    return () => {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
+  }
+
+  return () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflowY = '';
+  };
+}, [isOpen]);
 
   return (
     <motion.div {...FADE_IN_DOWN} className={styles.mobileWrapper}>
