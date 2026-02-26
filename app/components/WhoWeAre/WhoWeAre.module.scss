@@ -13,6 +13,10 @@
 .content {
   max-width: 754px;
   padding: 150px 0 180px 0;
+
+  @include respond-to("mobile") {
+    padding: 140px 20px 170px 20px;
+  }
 }
 
 .title {
@@ -25,4 +29,8 @@
   @include text-base(24px, 500);
 
   margin-bottom: 24px;
+
+  @include respond-to("sm-mobile") {
+    font-size: 22px;
+  }
 }

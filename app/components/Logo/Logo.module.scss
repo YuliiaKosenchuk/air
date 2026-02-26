@@ -1,0 +1,8 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.logo {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}

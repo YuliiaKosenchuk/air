@@ -1,0 +1,58 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  z-index: 1000;
+  width: 100%;
+  padding: 48px 0;
+  background-color: $bg-color-dark;
+
+  @include respond-to("mobile") {
+    padding: 20px 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-to("mobile") {
+    justify-content: flex-start;
+    gap: 32px;
+  }
+}
+
+.hireUsWrapper {
+  position: relative;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+
+  @include respond-to("mobile") {
+    margin-left: auto;
+  }
+}
+
+.hireUsLink {
+  @include title-base(13px);
+  @include link-styles;
+}
+
+.desktopNav {
+  @include respond-to("mobile") {
+    display: none;
+  }
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: $bg-color-underline;
+  border-radius: 4px;
+  z-index: 1;
+}

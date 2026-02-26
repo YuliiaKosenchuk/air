@@ -1,0 +1,35 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.navLinks {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+  align-items: center;
+}
+
+.navLi {
+  position: relative; 
+  padding: 8px 0;
+}
+
+.navItem {
+  @include title-base(13px);
+  @include link-styles;
+
+  @include respond-to("mobile") {
+    font-size: 20px;
+   
+  }
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: -2;
+  right: 0;
+  height: 2px;
+  background-color:$bg-color-underline;
+  border-radius: 4px;
+  z-index: 1;
+}

@@ -1,6 +1,15 @@
+$xl-desktop: 2560px;
+$desktop:1600px;
+$tablet:1024px;
+$mobile:640px;
+$sm-mobile:320px;
+
 $font-primary: var(--font-poppins), sans-serif;
 $font-secondary: var(--font-open-sans), sans-serif; 
 $color-primary:#253757;
 $color-secondary: #6C788B;
+$color-accent: #FFF;
+$bg-color-dark: #2C2C2C;
 $bg-color-primary:#F2F6FA;
-$bg-color-secondary: #FFFFFF;
+$bg-color-secondary: #FFF;
+$bg-color-underline: #2060F6;

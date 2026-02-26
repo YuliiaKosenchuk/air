@@ -1,5 +1,17 @@
 @use "./variables" as *;
 
+@mixin respond-to($device) {
+  @if $device == "desktop" {
+    @media (max-width: $desktop) { @content; }
+  } @else if $device == "tablet" {
+    @media (max-width: $tablet) { @content; }
+  } @else if $device == "mobile" {
+    @media (max-width: $mobile) { @content; }
+  } @else if $device == "sm-mobile" {
+    @media (max-width: $sm-mobile) { @content; }
+  }
+}
+
 @mixin title-base($size: 32px) {
   font-family: $font-primary;
   font-size: $size;
@@ -14,4 +26,18 @@
   font-weight: $font-weight;
   line-height: 1.5;
   color: $color-secondary;
+}
+
+@mixin link-styles() {
+  text-decoration: none;
+  color: $color-accent;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 3px;
+  font-weight: 700;
+
+  &:visited {
+  color: inherit;
+}
 }
