@@ -7,4 +7,17 @@
   max-width: 1150px;
   margin: 0 auto;
   padding: 0 20px;
+
+  
+    @include respond-to("tablet") {
+      max-width: 920px;
+    }
+  
+    @include respond-to("mobile") {
+      max-width: 560px;
+    }
+  
+    @include respond-to("sm-mobile") {
+      max-width: 280px;
+    }
 }

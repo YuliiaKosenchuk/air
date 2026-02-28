@@ -1,0 +1,74 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.visionSection {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.shapesWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  
+  min-width: 1200px; 
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include respond-to("mobile") {
+    display: none;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 754px;
+  padding: 198px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to("mobile") {
+    padding: 140px 20px 170px 20px;
+  }
+}
+
+.title {
+  @include title-base(52px);
+
+  margin-bottom: 24px;
+  text-align: center;
+
+  @include respond-to("mobile") {
+    line-height: 1.2;
+  }
+
+  @include respond-to("sm-mobile") {
+    font-size: 44px;
+  }
+}
+
+.text {
+  @include text-base(24px, 600);
+
+  text-align: center;
+  margin-bottom: 64px;
+
+  @include respond-to("sm-mobile") {
+    margin-bottom: 56px;
+    font-size: 22px;
+  }
+}

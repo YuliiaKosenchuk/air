@@ -1,0 +1,17 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.button {
+  padding: 17px 110px; 
+  border-radius: 8px; 
+  
+  @include title-base(15px);
+  color: $color-accent;
+  line-height: 1;
+  background-color: #2060F6;  
+  transition: box-shadow 0.5s ease;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(46, 102, 246, 0.2);
+  }
+}

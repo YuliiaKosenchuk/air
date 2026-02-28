@@ -131,11 +131,12 @@ textarea {
 }
 
 button {
-  display: inline-block;
-  background: none;
-  border: 0;
-  padding: 0;
+   border: none;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
 }
 
 /**

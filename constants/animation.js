@@ -72,3 +72,9 @@ export const MOBILE_ASIDE = {
     transition: { duration: 0.3, ease: "easeInOut" }
   },
 };
+
+export const BUTTON_ANIMATION = {
+  whileHover: { scale: 1.02, backgroundColor: "#306ef7" },
+  whileTap: { scale: 0.98 },
+  transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+};
