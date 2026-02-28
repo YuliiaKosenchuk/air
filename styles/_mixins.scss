@@ -20,6 +20,16 @@
   line-height: 1.5;
 }
 
+@mixin subtitle-base() {
+  font-family: $font-primary;
+  font-size: 13px;
+  color: $color-subtitle;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
 @mixin text-base($font-size: 13px, $font-weight: 400) {
   font-family: $font-secondary;
   font-size: $font-size;

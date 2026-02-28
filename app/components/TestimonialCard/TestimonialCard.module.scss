@@ -1,0 +1,98 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.card {
+  background: $bg-color-secondary;
+  border-radius: 16px;
+  padding: 32px 40px;
+  text-align: center;
+  // box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.02); //shadow cut embla
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 87px;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  position: relative;
+  z-index: 2;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.shape {
+  position: absolute;
+  width: 56px;
+  height: 140px;
+  background-color: $bg-color-underline;
+  border-radius: 12px;
+  z-index: 1;
+  transform-origin: center center;
+}
+
+.shapeTop {
+  left: 6%;
+  top: -35%;
+}
+
+.shapeBottom {
+  right: 6%;
+  bottom: -35%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .quoteIcon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 11px;
+  }
+
+  .text {
+    @include text-base(13px, 600);
+  }
+}
+
+  .divider {
+    margin-top: auto;
+  }
+
+  .name {
+    @include text-base(13px, 600);
+
+    margin-bottom: 4px;
+    color: $color-primary;
+  }
+
+  .role {
+    @include subtitle-base();
+  }

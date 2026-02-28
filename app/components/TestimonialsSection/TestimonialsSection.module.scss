@@ -1,0 +1,53 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.section {
+  padding: 100px 0;
+  background-color: $bg-color-primary;
+  overflow: hidden;
+
+  @include respond-to("sm-mobile") {
+    padding-bottom: 70px;
+  }
+}
+
+.header {
+  margin-bottom: 85px;
+  text-align: left;
+}
+
+.subTitle {
+  @include subtitle-base();
+
+  display: block;
+  margin-bottom: 16px;
+}
+
+.title {
+  @include title-base();
+}
+
+.embla {
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.emblaContainer {
+  display: flex;
+  margin-left: -20px;
+}
+
+.emblaSlide {
+  flex: 0 0 33.333%;
+  min-width: 0;
+  padding-left: 20px;
+
+  @media (max-width: 1024px) {
+    flex: 0 0 50%;
+  }
+
+  @media (max-width: 640px) {
+    flex: 0 0 100%;
+  }
+}
