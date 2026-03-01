@@ -25,6 +25,8 @@ Check out the live version of the project here: [Air Demo](https://air-rho-mocha
 
 - **Animation: Framer Motion** (motion/react) for complex interactions and entry transitions.
 
+- **Icons: Lucide React**
+
 - **Language: JavaScript / React**
 
 - **Deployment: Vercel**

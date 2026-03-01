@@ -1,0 +1,94 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.section {
+  background-color: $bg-color-dark;
+  padding-left: 10%;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  @include respond-to("tablet") {
+    padding-left: 0;
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  align-items: stretch;
+  width: 100%;
+
+  @include respond-to("desktop") {
+    gap: 70px;
+  }
+
+  @include respond-to("tablet") {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.content {
+  padding-top: 120px;
+  padding-bottom: 205px;
+  max-width: 490px;
+
+  @include respond-to("tablet") {
+    max-width: 100%;
+    padding: 58px 40px 147px 40px;
+  }
+}
+
+.title {
+  @include title-base(64px);
+
+  line-height: 1.06;
+  color: $color-accent;
+  letter-spacing: -2px;
+  margin-bottom: 32px;
+
+  @include respond-to("sm-mobile") {
+    font-size: 52px;
+    line-height: 1.2;
+  }
+}
+
+.description {
+  @include text-base(18px);
+
+  color: $color-accent;
+  margin-bottom: 83px;
+}
+
+.heroBtn {
+  @include respond-to("tablet") {
+    padding: 14px 88px;
+  }
+
+  @include respond-to("sm-mobile") {
+    padding: 16px 75px;
+  }
+}
+
+.sliderWrapper {
+  width: 100%;
+
+  @include respond-to("tablet") {
+    height: 500px;
+  }
+}
+
+// @include respond-to("tablet") {
+
+//     }
+
+//     @include respond-to("mobile") {
+
+//     }
+
+//     @include respond-to("sm-mobile") {
+
+//     }

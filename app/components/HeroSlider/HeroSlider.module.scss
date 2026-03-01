@@ -1,0 +1,108 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.embla {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px 0 30px 0px;
+
+  @include respond-to("tablet") {
+    border-radius: 30px;
+  }
+}
+
+.emblaViewport {
+  height: 100%;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+  height: 100%;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.imageCard {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.staticOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 40%);
+  display: flex;
+  align-items: flex-end;
+  padding: 48px 78px;
+  pointer-events: none;
+
+  @include respond-to("tablet") {
+    padding: 32px 40px;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  pointer-events: auto;
+
+  @include respond-to("tablet") {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.arrows {
+  display: flex;
+  gap: 16px;
+}
+
+.arrowBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  color: $color-accent;
+  cursor: pointer;
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: $color-accent;
+    color: black;
+  }
+}
+
+.info {
+  max-width: 260px;
+  min-height: 80px;
+}
+
+.title {
+  @include subtitle-base();
+
+  display: block;
+  margin-bottom: 10px;
+  color: $color-accent;
+}
+
+.infoText {
+  @include text-base(14px);
+  line-height: 1.4;
+  color: $color-accent;
+  opacity: 0.7;
+}
