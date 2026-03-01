@@ -18,6 +18,7 @@
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 200px;
+  align-items: start;
 
   @include respond-to("tablet") {
     gap: 56px;
