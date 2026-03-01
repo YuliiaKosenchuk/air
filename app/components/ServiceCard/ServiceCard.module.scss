@@ -1,0 +1,59 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.card {
+  background: $bg-color-secondary;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  min-height: 264px;
+}
+
+.idBadge {
+  @include title-base(13px);
+  color: $bg-color-underline;
+  line-height: 1;
+  background: $bg-color-light;
+  padding: 7px 12px;
+  margin-bottom: 24px;
+  border-radius: 23px;
+  width: fit-content;
+}
+
+.list {
+  list-style: none;
+  margin-bottom: 32px;
+  li {
+    @include text-base(13px, 600);
+  }
+}
+
+.learnMore {
+  @include title-base(15px);
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+
+  margin-top: auto;
+  padding: 0;
+  background: none;
+
+  .iconWrapper {
+    background: $bg-color-underline;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .iconWrapper {
+    transform: scale(1.2);
+  }
+}

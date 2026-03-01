@@ -1,0 +1,67 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.section {
+  padding: 280px 10px 50px 10px;
+  background-color: $bg-color-primary;
+
+   @include respond-to("tablet") {
+    padding-top: 180px;
+  }
+
+  @include respond-to('sm-mobile') {
+    padding-top: 150px;
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 200px;
+
+  @include respond-to("tablet") {
+    gap: 56px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.headerColumn {
+  position: sticky;
+  top: 100px;
+
+
+  @include respond-to("tablet") {
+    position: static;
+    max-width: 260px;
+  }
+
+  @include respond-to('mobile') {
+    min-width: 100%
+  }
+}
+
+.overline {
+  @include subtitle-base();
+}
+
+.title {
+  @include title-base();
+  margin: 20px 0;
+}
+
+.description {
+  @include text-base(14px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gridColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  @include respond-to('mobile') {
+    grid-template-columns: 1fr;
+  }
+}
