@@ -20,11 +20,18 @@ export default function ServiceCard({ item }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  const targetY = isEven && !isMobile ? -130 : 0;
+  const travelDistance = 20;
+
   const cardVariants = {
-    hidden: CARD_ITEM.hidden,
+    hidden: { 
+      opacity: 0, 
+      y: targetY + travelDistance 
+    },
     visible: {
-      ...CARD_ITEM.visible,
-      y: isEven && !isMobile ? -130 : 0,
+      opacity: 1,
+      y: targetY,
+      transition: CARD_ITEM.visible.transition
     },
   };
 
