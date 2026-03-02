@@ -18,6 +18,7 @@ export default function NavLinks({ type, hoveredItem, setHoveredItem }) {
     type === "header" ? NAV_LINKS.filter((link) => link.inHeader) : NAV_LINKS;
 
   const isHeader = type === "header";
+
   const isExternalControl =
     type === "header" && typeof setHoveredItem === "function";
 
@@ -32,6 +33,7 @@ export default function NavLinks({ type, hoveredItem, setHoveredItem }) {
   return (
     <motion.ul
       className={styles.navLinks}
+      data-type={type}
       variants={CARD_CONTAINER}
       initial="hidden"
       animate="visible"
@@ -49,6 +51,7 @@ export default function NavLinks({ type, hoveredItem, setHoveredItem }) {
             onMouseEnter={() => handleInteraction(link.id, index)}
             onClick={() => {
               handleInteraction(link.id);
+
               if (onClick) {
                 setTimeout(onClick, 400);
               }

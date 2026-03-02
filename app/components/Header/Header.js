@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion } from "motion/react";
+import * as motion from "motion/react-client";
 import Logo from "../Logo/Logo";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import NavLinks from "../NavLinks/NavLinks";
@@ -18,6 +18,7 @@ export default function Header() {
           <nav className={styles.desktopNav}>
             <NavLinks
               type="header"
+              isMobile={false}
               hoveredItem={hoveredItem}
               setHoveredItem={setHoveredItem}
             />

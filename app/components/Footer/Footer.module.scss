@@ -1,0 +1,28 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.footer {
+  width: 100%;
+  padding: 104px 0 80px 0;
+  background-color: $bg-color-dark;
+
+  @include respond-to("mobile") {
+    padding: 80px 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-to("tablet") {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @include respond-to("mobile") {
+   gap: 48px;
+  }
+}

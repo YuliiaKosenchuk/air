@@ -7,7 +7,7 @@ import { FADE_IN_DOWN, MOBILE_ASIDE } from "../../../constants/animation";
 
 const burgerVariants = {
   closed: { x: 0 },
-  open: { x: "calc(100vw - 160px)" },
+  open: { x: "calc(100vw - 190px)" },
 };
 
 const burgerTransition = {
@@ -17,30 +17,30 @@ const burgerTransition = {
 };
 
 const lineTopVariants = {
-  closed: { 
-    rotate: 0, 
+  closed: {
+    rotate: 0,
     y: 0,
-    transition: burgerTransition 
+    transition: burgerTransition,
   },
-  open: { 
-    rotate: 45, 
-    y: 4, 
+  open: {
+    rotate: 45,
+    y: 4,
     backgroundColor: "#fff",
-    transition: burgerTransition 
+    transition: burgerTransition,
   },
 };
 
 const lineBottomVariants = {
-  closed: { 
-    rotate: 0, 
+  closed: {
+    rotate: 0,
     y: 0,
-    transition: burgerTransition 
+    transition: burgerTransition,
   },
-  open: { 
-    rotate: -45, 
-    y: -4, 
+  open: {
+    rotate: -45,
+    y: -4,
     backgroundColor: "#fff",
-    transition: burgerTransition 
+    transition: burgerTransition,
   },
 };
 export default function MobileMenu() {
@@ -51,33 +51,31 @@ export default function MobileMenu() {
   const mode = isOpen ? "open" : "closed";
 
   // Prevent background scrolling when menu is open
- useEffect(() => {
-  if (isOpen) {
-    const scrollY = window.scrollY;
-    
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
-    document.body.style.overflowY = 'hidden';
-  } else {
-    const scrollY = document.body.style.top;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    document.body.style.overflowY = '';
-
-    if (scrollY) {
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  useEffect(() => {
+    if (isOpen) {
+      //Safari OMG =(
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflowY = "hidden";
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
     }
-  }
-
-  return () => {
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    document.body.style.overflowY = '';
-  };
-}, [isOpen]);
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflowY = "";
+    };
+  }, [isOpen]);
 
   return (
     <motion.div {...FADE_IN_DOWN} className={styles.mobileWrapper}>
@@ -93,6 +91,7 @@ export default function MobileMenu() {
             animate={mode}
             className={styles.line}
           />
+
           <motion.span
             variants={lineBottomVariants}
             animate={mode}
@@ -100,6 +99,7 @@ export default function MobileMenu() {
           />
         </motion.div>
       </button>
+
       <AnimatePresence>
         {isOpen && (
           <motion.aside {...MOBILE_ASIDE} className={styles.aside}>

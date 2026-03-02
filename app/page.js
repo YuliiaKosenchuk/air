@@ -5,6 +5,7 @@ import VisionSection from "./components/VisionSection/VisionSection";
 import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSection";
 import ServicesSection from "./components/ServicesSection/ServicesSection";
 import HeroSection from "./components/HeroSection/HeroSection";
+import Footer from "./components/Footer/Footer";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <ServicesSection />
       <TestimonialsSection />
       <VisionSection />
+      <Footer/>
     </main>
   );
 }
