@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${openSans.variable} ${poppins.variable}`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${openSans.variable} ${poppins.variable}`}>
       <body className={openSans.className}>{children}</body>
     </html>
   );

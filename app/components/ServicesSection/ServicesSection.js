@@ -6,7 +6,7 @@ import { CARD_CONTAINER, FADE_IN_VIEW } from "../../../constants/animation";
 
 export default function ServicesSection() {
   return (
-    <section className={styles.section}>
+    <section id="services" className={styles.section}>
       <div className="container">
         <div className={styles.gridContainer}>
           <motion.div className={styles.headerColumn} {...FADE_IN_VIEW}>

@@ -2,11 +2,13 @@
 import * as motion from "motion/react-client";
 import { ArrowRight } from "lucide-react";
 import styles from "./ServiceCard.module.scss";
-import { CARD_ITEM} from "../../../constants/animation";
+import { CARD_ITEM } from "../../../constants/animation";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ServiceCard({ item }) {
   const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
   const isEven = Number(item.id) % 2 === 0;
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function ServiceCard({ item }) {
 
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    
+
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
@@ -24,22 +26,19 @@ export default function ServiceCard({ item }) {
   const travelDistance = 20;
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: targetY + travelDistance 
+    hidden: {
+      opacity: 0,
+      y: targetY + travelDistance,
     },
     visible: {
       opacity: 1,
       y: targetY,
-      transition: CARD_ITEM.visible.transition
+      transition: CARD_ITEM.visible.transition,
     },
   };
 
   return (
-    <motion.div 
-      className={styles.card}
-      variants={cardVariants}
-    >
+    <motion.div className={styles.card} variants={cardVariants}>
       <span className={styles.idBadge}>{item.id}</span>
       <div className={styles.content}>
         <ul className={styles.list}>
@@ -48,7 +47,10 @@ export default function ServiceCard({ item }) {
           ))}
         </ul>
       </div>
-      <button className={styles.learnMore}>
+      <button
+        className={styles.learnMore}
+        onClick={() => router.push("/not-available")}
+      >
         <div className={styles.iconWrapper}>
           <ArrowRight size={20} color="white" />
         </div>

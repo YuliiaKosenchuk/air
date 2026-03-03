@@ -3,7 +3,7 @@
 
 .section {
   background-color: $bg-color-dark;
-  padding-left: 10%;
+  // padding-left: 10%;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   overflow: hidden;
@@ -20,13 +20,19 @@
   grid-template-columns: 1fr 1.7fr;
   align-items: stretch;
   width: 100%;
+  padding-left: calc((100vw - 1150px) / 2 + 20px);
 
   @include respond-to("desktop") {
     gap: 70px;
   }
 
+  @include respond-to(1150px) { 
+    padding-left: 20px;
+  }
+
   @include respond-to("tablet") {
     grid-template-columns: 1fr;
+    padding-left: 0;
     gap: 0;
   }
 }
@@ -80,15 +86,3 @@
     height: 500px;
   }
 }
-
-// @include respond-to("tablet") {
-
-//     }
-
-//     @include respond-to("mobile") {
-
-//     }
-
-//     @include respond-to("sm-mobile") {
-
-//     }

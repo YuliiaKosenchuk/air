@@ -28,7 +28,13 @@ export default function TestimonialCard({ data }) {
         />
 
         <div className={styles.avatar}>
-          <Image src={data.image} alt={data.name} width={140} height={140} />
+          <Image
+            src={data.image}
+            alt={data.name}
+            width={140}
+            height={140}
+            loading="eager"
+          />
         </div>
       </div>
 

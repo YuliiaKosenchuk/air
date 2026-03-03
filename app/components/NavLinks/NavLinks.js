@@ -11,7 +11,7 @@ import {
   NAV_UNDERLINE,
 } from "../../../constants/animation";
 
-export default function NavLinks({ type, hoveredItem, setHoveredItem }) {
+export default function NavLinks({ type, hoveredItem, setHoveredItem, onClick }) {
   const [localHoveredIndex, setLocalHoveredIndex] = useState(null);
 
   const linksToRender =
@@ -51,10 +51,10 @@ export default function NavLinks({ type, hoveredItem, setHoveredItem }) {
             onMouseEnter={() => handleInteraction(link.id, index)}
             onClick={() => {
               handleInteraction(link.id);
-
-              if (onClick) {
-                setTimeout(onClick, 400);
-              }
+              if (onClick) onClick();
+              // if (onClick) {
+              //   setTimeout(onClick, 400);
+              // }
             }}
           >
             <Link href={link.href} className={styles.navItem}>

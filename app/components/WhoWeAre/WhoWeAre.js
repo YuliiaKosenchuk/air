@@ -4,7 +4,7 @@ import { FADE_IN_VIEW } from "../../../constants/animation";
 
 export default function WhoWeAre() {
   return (
-    <section className={styles.section}>
+    <section id="about" className={styles.section}>
       <motion.div
         className={styles.content}
         {...FADE_IN_VIEW}

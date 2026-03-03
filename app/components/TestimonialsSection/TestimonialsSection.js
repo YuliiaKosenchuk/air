@@ -21,7 +21,7 @@ export default function TestimonialsSection() {
   if (!mounted) return null;
 
   return (
-    <section className={styles.section}>
+    <section id="work" className={styles.section}>
       <div className="container">
         <motion.div className={styles.header} {...FADE_IN_VIEW}>
           <span className={styles.subTitle}>TESTIMONIALS</span>

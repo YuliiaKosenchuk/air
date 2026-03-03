@@ -5,10 +5,13 @@ import HeroSlider from "../HeroSlider/HeroSlider";
 import { slides } from "../../../data/slides";
 import styles from "./HeroSection.module.scss";
 import { FADE_IN_VIEW, getFadeInView } from "../../../constants/animation";
+import { useRouter } from 'next/navigation';
 
 export default function HeroSection() {
+  const router = useRouter();
+
   return (
-    <section className={styles.section}>
+    <section id="hero" className={styles.section}>
       <div className={styles.gridContainer}>
         <motion.div className={styles.content} {...FADE_IN_VIEW}>
           <h1 className={styles.title}>Strategic Agency</h1>
@@ -16,7 +19,11 @@ export default function HeroSection() {
             We believe in the power of bold ideas that can solve business
             challenges.
           </p>
-          <Button btnText="Learn more" onClick={() => {}} className = {styles.heroBtn}/>
+          <Button
+            btnText="Learn more"
+            onClick={() => router.push('/not-available')}
+            className={styles.heroBtn}
+          />
         </motion.div>
 
         <motion.div className={styles.sliderWrapper} {...getFadeInView(0.2)}>

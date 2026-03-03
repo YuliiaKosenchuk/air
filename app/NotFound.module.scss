@@ -1,0 +1,56 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba($color-primary, 0.05) 100%
+  );
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  @include title-base(120px);
+  color: $color-primary;
+  margin: 0;
+}
+
+.subtitle {
+  @include title-base(60px);
+  color: $color-primary;
+  margin-bottom: 16px;
+
+  @include respond-to("mobile") {
+    font-size: 40px;
+  }
+}
+
+.text {
+  color: $color-secondary;
+  max-width: 400px;
+  margin-bottom: 32px;
+}
+
+.backLink {
+  @include link-styles;
+  @include title-base(15px);
+  color: $color-accent;
+  background-color: $bg-color-underline;
+  padding: 17px 110px;
+  border: 1px solid $bg-color-underline;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: $bg-color-underline;
+    box-shadow: 0 10px 20px rgba(46, 102, 246, 0.2);
+    color: #000;
+  }
+}
