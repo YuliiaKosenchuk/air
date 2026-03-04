@@ -2,6 +2,10 @@
 @use '../styles/variables' as *;
 @use '../styles/mixins' as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 section[id] {
   scroll-margin-top: 60px; 
 }

@@ -48,6 +48,14 @@
   border-radius: 8px;
   transition: all 0.5s ease;
 
+  @include respond-to("tablet") {
+   font-size: 12px;
+  }
+
+  @include respond-to("mobile") {
+    padding: 17px 80px;
+  }
+
   &:hover {
     background-color: $bg-color-underline;
     box-shadow: 0 10px 20px rgba(46, 102, 246, 0.2);

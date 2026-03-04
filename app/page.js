@@ -6,6 +6,7 @@ import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSe
 import ServicesSection from "./components/ServicesSection/ServicesSection";
 import HeroSection from "./components/HeroSection/HeroSection";
 import Footer from "./components/Footer/Footer";
+import ContactSection from "./components/ContactSection/ContactSection";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <ServicesSection />
       <TestimonialsSection />
       <VisionSection />
+      <ContactSection/>
       <Footer/>
     </main>
   );
