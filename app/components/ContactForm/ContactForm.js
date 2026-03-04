@@ -1,12 +1,7 @@
 "use client";
 
 import * as motion from "motion/react-client";
-import {
-  useActionState,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import { useActionState, useCallback, useEffect, useState } from "react";
 import { sendContact } from "../../actions/contact";
 import Button from "../Button/Button";
 import styles from "./ContactForm.module.scss";
@@ -19,6 +14,8 @@ const FIELDS = [
     type: "email",
     placeholder: "Your email",
     component: "input",
+    defaultValue: "onboarding@resend.dev",
+    readOnly: true,
   },
   { name: "name", type: "text", placeholder: "Your name", component: "input" },
   {
@@ -43,10 +40,8 @@ export default function ContactForm() {
       }, 0);
       return () => clearTimeout(timeout);
     }
-    
 
     if (state?.error) {
-
       const timeout = setTimeout(() => {
         // timeout crutch, sorry - need to be added to the stack separate
         setErrors((prev) => ({ ...prev, global: state.error }));
@@ -112,6 +107,8 @@ export default function ContactForm() {
                 placeholder={field.placeholder}
                 onInput={() => handleInput(field.name)}
                 rows={field.component === "textarea" ? 1 : undefined}
+                defaultValue={field.defaultValue}
+                readOnly={field.readOnly}
               />
               <div className={styles.line} />
 
