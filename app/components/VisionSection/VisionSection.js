@@ -1,12 +1,17 @@
 "use client";
+
 import * as motion from "motion/react-client";
+import { useRouter } from "next/navigation";
 import BackgroundShapes from "../BackgroundShapes/BackgroundShapes";
 import Button from "../Button/Button";
 import styles from "./VisionSection.module.scss";
 import { FADE_IN_VIEW, getFadeInView } from "../../../constants/animation";
 
 export default function VisionSection() {
+  const router = useRouter();
+
   const handleApply = () => {
+    router.push("/not-available");
     console.log("Відкрито форму подачі заявки");
   };
 
@@ -25,7 +30,7 @@ export default function VisionSection() {
               components are united.
             </p>
           </motion.div>
-          
+
           <motion.div {...getFadeInView(0.3)}>
             <Button
               className={styles.applyBtn}

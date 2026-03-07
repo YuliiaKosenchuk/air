@@ -52,9 +52,7 @@ export default function NavLinks({ type, hoveredItem, setHoveredItem, onClick })
             onClick={() => {
               handleInteraction(link.id);
               if (onClick) onClick();
-              // if (onClick) {
-              //   setTimeout(onClick, 400);
-              // }
+              
             }}
           >
             <Link href={link.href} className={styles.navItem}>

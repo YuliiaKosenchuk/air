@@ -1,16 +1,18 @@
-import './globals.scss';
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import "./globals.scss";
 import { Open_Sans, Poppins } from "next/font/google";
 
 const openSans = Open_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600','700'],
-  variable: '--font-open-sans',
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-open-sans",
 });
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '600', '700', '900'],
-  variable: '--font-poppins',
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "900"],
+  variable: "--font-poppins",
 });
 
 export const metadata = {
@@ -20,8 +22,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${openSans.variable} ${poppins.variable}`}>
-      <body className={openSans.className}>{children}</body>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${openSans.variable} ${poppins.variable}`}
+    >
+      <body className={openSans.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

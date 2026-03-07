@@ -18,6 +18,8 @@ Check out the live version of the project here: [Air Demo](https://air-rho-mocha
 
 - Modular SCSS: Utilizes a modern styling architecture with Mixins, Variables, and BEM-like nesting for maintainability.
 
+- The contacts form is currently running in test mode from [Resend](https://resend.com/). All submitted messages are delivered to a private email address.
+
 ## 🛠 Tech Stack
 - **Framework: Next.js 15+ (App Router)**
 
@@ -30,6 +32,8 @@ Check out the live version of the project here: [Air Demo](https://air-rho-mocha
 - **Language: JavaScript / React**
 
 - **Deployment: Vercel**
+
+- **Contacts Form: Resend**
 
 🚀 Getting Started
 1.  **Clone the repository:**

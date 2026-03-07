@@ -1,4 +1,5 @@
 "use client";
+
 import * as motion from "motion/react-client";
 import Button from "../Button/Button";
 import HeroSlider from "../HeroSlider/HeroSlider";
