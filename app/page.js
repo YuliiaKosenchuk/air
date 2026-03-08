@@ -5,10 +5,13 @@ import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSe
 import ServicesSection from "./components/ServicesSection/ServicesSection";
 import HeroSection from "./components/HeroSection/HeroSection";
 import ContactSection from "./components/ContactSection/ContactSection";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 export default function Home() {
   return (
     <main>
+      <Header />
       <HeroSection />
       <WhoWeAre />
       <OurExpertise />
@@ -16,6 +19,7 @@ export default function Home() {
       <TestimonialsSection />
       <VisionSection />
       <ContactSection />
+      <Footer />
     </main>
   );
 }

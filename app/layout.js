@@ -1,5 +1,3 @@
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
 import "./globals.scss";
 import { Open_Sans, Poppins } from "next/font/google";
 
@@ -28,9 +26,7 @@ export default function RootLayout({ children }) {
       className={`${openSans.variable} ${poppins.variable}`}
     >
       <body className={openSans.className}>
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
